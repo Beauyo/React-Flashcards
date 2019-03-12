@@ -1,14 +1,14 @@
 import React from "react";
-import { Button, Table, } from "semantic-ui-react";
+import { Button, Card, } from "semantic-ui-react";
 
 const Flashcard = ({ id, question, answer, remove }) => (
-    <Table.Row>
-    <Table.Cell>{question}</Table.Cell>
-    <Table.Cell>{answer}</Table.Cell>
-    <Table.Cell>
+    <Card>
+    <Card.Header>{question}</Card.Header>
+    <Card.Description>{answer}</Card.Description>
+    <Card.Content>
       <Button color="blue" onClick={() => remove(id)}>Delete</Button>
-    </Table.Cell>
-  </Table.Row>
+    </Card.Content>
+  </Card>
 );
 
 export default Flashcard;

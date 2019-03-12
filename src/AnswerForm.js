@@ -1,4 +1,6 @@
-import React from "react";
+// import React from "react";
 
 
-class AnswerForm extends 
+// class AnswerForm extends 
+
+// export default AnswerForm;
