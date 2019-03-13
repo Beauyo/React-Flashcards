@@ -49,9 +49,10 @@ class App extends Component {
           <Icon name={`angle double ${this.state.showForm ? "up" : "down"}`} />
           </Button>
        { this.state.showForm ? <FlashcardForm add={this.addFlashcard} /> : null }
+       
         </div>
         <br/>
-        <Flashcards flashcards={this.state.flashcards} remove={this.removeFlashcard} />
+        <Flashcards flashcards={this.state.flashcards} remove={this.removeFlashcard} answer={this.showAnswer} />
       </Container>
     );
   }
