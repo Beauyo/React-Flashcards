@@ -11,12 +11,12 @@ class App extends Component {
       { id: 4, question: "8x2", answer: "16" },
     ],
     showForm: false,
-    showAnswer: false,
+    showAnswer: true,
   }
 
-  showAnswer = () => {
-    this.setState({ showAnswer: !this.state.showAnswer, });
-  }
+  // showAnswer = () => {
+  //   this.setState({ showAnswer: !this.state.showAnswer, });
+  // }
 
   getId = () => {
     return Math.floor((1 + Math.random()) * 10000);
