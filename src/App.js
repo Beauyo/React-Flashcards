@@ -10,7 +10,12 @@ class App extends Component {
       { id: 3, question: "9x5", answer: "45" },
       { id: 4, question: "8x2", answer: "16" },
     ],
+    showForm: false,
     showAnswer: false,
+  }
+
+  showAnswer = () => {
+    this.setState({ showAnswer: !this.state.showAnswer, });
   }
 
   getId = () => {
@@ -30,8 +35,8 @@ class App extends Component {
     this.setState({ flashcards: [...flashcards], });
   };
 
-  toggleAnswer = () => {
-    this.setState({ showAnswer: !this.state.showAnswer, });
+  toggleForm = () => {
+    this.setState({ showForm: !this.state.showForm, });
   }
 
   render() {
@@ -40,10 +45,10 @@ class App extends Component {
         <Header>React Flash Cards</Header>
         <br />
         <div>
-          <Button icon color="blue" onClick={this.toggleAnswer}>
-          <Icon name={`angle double ${this.state.showAnswer ? "up" : "down"}`} />
+          <Button icon color="blue" onClick={this.toggleForm}>
+          <Icon name={`angle double ${this.state.showForm ? "up" : "down"}`} />
           </Button>
-       { this.state.showAnswer ? <FlashcardForm add={this.addFlashcard} /> : null }
+       { this.state.showForm ? <FlashcardForm add={this.addFlashcard} /> : null }
         </div>
         <br/>
         <Flashcards flashcards={this.state.flashcards} remove={this.removeFlashcard} />
