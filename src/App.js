@@ -1,8 +1,14 @@
-import React, { Component } from 'react';
-import { Container, Header, Button, Icon } from "semantic-ui-react"
+import React, { Component, Fragment } from 'react';
+import { Container, Header, Button, Icon, } from "semantic-ui-react"
 import Flashcards from "./Flashcards"
 import FlashcardForm from "./FlashcardForm"
+import {  Route, Switch } from 'react-router-dom';
+import Home from './components/Home'
+import About from './components/About'
+import Navbar from "./components/Navbar"
+import Blog from "./components/Blog";
 class App extends Component {
+
   state = {
     flashcards: [
       { id: 1, question: "2x2", answer: "4" },
@@ -41,6 +47,11 @@ class App extends Component {
 
   render() {
     return (
+      <Fragment>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/blog" component={Blog} />
       <Container>
         <Header>React Flash Cards</Header>
         <br />
@@ -54,6 +65,8 @@ class App extends Component {
         <br/>
         <Flashcards flashcards={this.state.flashcards} remove={this.removeFlashcard} answer={this.showAnswer} />
       </Container>
+        </Switch>
+      </Fragment>
     );
   }
 }
