@@ -11,7 +11,7 @@ const Navbar = () => (
         </Link>
         <Link to='/about'>
         <Menu.Item>
-            About
+            Flashcards!
         </Menu.Item>
         </Link>
         <Link to='/blog'>
